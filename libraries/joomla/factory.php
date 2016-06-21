@@ -87,6 +87,7 @@ abstract class JFactory
 	 * @param   string  $prefix  Application prefix
 	 *
 	 * @return  JApplicationBase object
+	 * @proto static public getApplication(id:Dynamic, config:php.NativeArray, prefix:String):JApplicationBase
 	 *
 	 * @see     JApplicationBase
 	 * @since   11.1
@@ -137,6 +138,7 @@ abstract class JFactory
 	 * @param   string  $namespace  The namespace of the configuration file
 	 *
 	 * @return  JRegistry
+	 * @proto static public getConfig(file:String, type:String, namespace:String):JRegistry
 	 *
 	 * @see     JRegistry
 	 * @since   11.1
@@ -164,6 +166,7 @@ abstract class JFactory
 	 * @param   array  $options  An array containing session options
 	 *
 	 * @return  JSession object
+	 * @proto static public getSession(options:php.NativeArray):JSession
 	 *
 	 * @see     JSession
 	 * @since   11.1
