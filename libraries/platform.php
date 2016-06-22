@@ -55,6 +55,7 @@ final class JPlatform
 	 * @param   string  $minimum  The minimum version of the Joomla Platform which is compatible.
 	 *
 	 * @return  boolean  True if the version is compatible.
+	 * @proto static public isCompatible(minimum:String):Bool
 	 *
 	 * @see     http://www.php.net/version_compare
 	 * @since   11.1
@@ -68,6 +69,7 @@ final class JPlatform
 	 * Gets a "PHP standardized" version string for the current Joomla Platform.
 	 *
 	 * @return  string  Version string.
+	 * @proto static public getShortVersion():String
 	 *
 	 * @since   11.1
 	 */
@@ -80,6 +82,7 @@ final class JPlatform
 	 * Gets a version string for the current Joomla Platform with all release information.
 	 *
 	 * @return  string  Complete version string.
+	 * @proto static public getLongVersion():String
 	 *
 	 * @since   11.1
 	 */
