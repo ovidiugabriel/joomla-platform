@@ -187,6 +187,7 @@ abstract class JFactory
 	 * Returns the global {@link JLanguage} object, only creating it if it doesn't already exist.
 	 *
 	 * @return  JLanguage object
+	 * @proto static public getLanguage():JLanguage
 	 *
 	 * @see     JLanguage
 	 * @since   11.1
@@ -207,6 +208,7 @@ abstract class JFactory
 	 * Returns the global {@link JDocument} object, only creating it if it doesn't already exist.
 	 *
 	 * @return  JDocument object
+	 * @proto static public getDocument():JDocument
 	 *
 	 * @see     JDocument
 	 * @since   11.1
@@ -229,6 +231,7 @@ abstract class JFactory
 	 * @param   integer  $id  The user to load - Can be an integer or string - If string, it is converted to ID automatically.
 	 *
 	 * @return  JUser object
+	 * @proto static public getUser(id:Int):JUser
 	 *
 	 * @see     JUser
 	 * @since   11.1
@@ -262,6 +265,7 @@ abstract class JFactory
 	 * @param   string  $storage  The storage method
 	 *
 	 * @return  JCacheController object
+	 * @proto static public getCache(group:String, handler:Dynamic, storage:String):JCache 
 	 *
 	 * @see     JCache
 	 */
@@ -296,6 +300,7 @@ abstract class JFactory
 	 * if it doesn't already exist.
 	 *
 	 * @return  JAccess object
+	 * @proto static public getACL():JAccess
 	 *
 	 * @deprecated  13.3  Use JAccess directly.
 	 */
@@ -317,7 +322,8 @@ abstract class JFactory
 	 * Returns the global {@link JDatabaseDriver} object, only creating it if it doesn't already exist.
 	 *
 	 * @return  JDatabaseDriver
-	 *
+	 * @proto static public getDbo():JDatabaseDriver
+	 * 
 	 * @see     JDatabaseDriver
 	 * @since   11.1
 	 */
@@ -342,6 +348,7 @@ abstract class JFactory
 	 * Returns the global {@link JMail} object, only creating it if it doesn't already exist.
 	 *
 	 * @return  JMail object
+	 * @proto static public getMailer():JMail
 	 *
 	 * @see     JMail
 	 * @since   11.1
@@ -364,6 +371,7 @@ abstract class JFactory
 	 * @param   boolean  $isFile  true to load a file or false to load a string.
 	 *
 	 * @return  mixed    JXMLElement or SimpleXMLElement on success or false on error.
+	 * @proto static public getXML(data:String, isFile:Bool):JXMLElement
 	 *
 	 * @see     JXMLElement
 	 * @since   11.1
@@ -419,6 +427,7 @@ abstract class JFactory
 	 * @param   string  $uri  Uri name.
 	 *
 	 * @return  JURI object
+	 * @proto static public getURI(uri:String):JURI
 	 *
 	 * @see     JURI
 	 * @since   11.1
@@ -431,6 +440,7 @@ abstract class JFactory
 		return JURI::getInstance($uri);
 	}
 
+
 	/**
 	 * Return the {@link JDate} object
 	 *
@@ -438,6 +448,7 @@ abstract class JFactory
 	 * @param   mixed  $tzOffset  The timezone offset.
 	 *
 	 * @return  JDate object
+	 * @proto static public getDate(time:Dynamic, tzOffset:Dynamic):JDate
 	 *
 	 * @see     JDate
 	 * @since   11.1
@@ -492,6 +503,7 @@ abstract class JFactory
 	 * @param   string  $namespace  The namespace of the configuration file.
 	 *
 	 * @return  JRegistry
+	 *
 	 *
 	 * @see     JRegistry
 	 * @since   11.1
@@ -688,6 +700,7 @@ abstract class JFactory
 	 * @param   boolean  $uamask       User agent masking (prefix Mozilla)
 	 *
 	 * @return  JStream
+	 * @proto static public getStream(usePrefix:Bool, useNetwork:Bool, ua:String, umask:Bool):JStream
 	 *
 	 * @see JStream
 	 * @since   11.1
