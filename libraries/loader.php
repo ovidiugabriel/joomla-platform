@@ -61,6 +61,7 @@ abstract class JLoader
 	 * @param   boolean  $recurse      Recurse through all child directories as well as the parent path.
 	 *
 	 * @return  void
+	 * @proto static public discover(classPrefix:String, parentPath:String, force:Bool, recurse:Bool):Void
 	 *
 	 * @since   11.1
 	 */
@@ -109,6 +110,7 @@ abstract class JLoader
 	 * Method to get the list of registered classes and their respective file paths for the autoloader.
 	 *
 	 * @return  array  The array of class => path values for the autoloader.
+	 * @proto static public getClassList():php.NativeArray
 	 *
 	 * @since   11.1
 	 */
@@ -121,6 +123,7 @@ abstract class JLoader
 	 * Method to get the list of registered namespaces.
 	 *
 	 * @return  array  The array of namespace => path values for the autoloader.
+	 * @proto static public getNamespaces():php.NativeArray
 	 *
 	 * @since   12.3
 	 */
@@ -136,6 +139,7 @@ abstract class JLoader
 	 * @param   string  $base  Search this directory for the class.
 	 *
 	 * @return  boolean  True on success.
+	 * @proto static public import(key:String, base:String):Bool
 	 *
 	 * @since   11.1
 	 */
@@ -201,6 +205,7 @@ abstract class JLoader
 	 * @param   string  $class  The class to be loaded.
 	 *
 	 * @return  boolean  True on success
+	 * @proto static public load(class:String):Bool
 	 *
 	 * @since   11.1
 	 */
@@ -234,6 +239,7 @@ abstract class JLoader
 	 * @param   string  $class  The class (including namespace) to load.
 	 *
 	 * @return  boolean  True on success, false otherwise.
+	 * @proto static public loadByNamespaceLowerCase(class:String):Bool
 	 *
 	 * @since   12.3
 	 */
@@ -281,6 +287,7 @@ abstract class JLoader
 	 * @param   string  $class  The class (including namespace) to load.
 	 *
 	 * @return  boolean  True on success, false otherwise.
+	 * @proto static public loadByNamespaceNaturalCase(class:String):Bool
 	 *
 	 * @since   12.3
 	 */
@@ -329,6 +336,7 @@ abstract class JLoader
 	 * @param   string  $class  The class (including namespace) to load.
 	 *
 	 * @return  boolean  True on success, false otherwise.
+	 * @proto static public loadByNamespaceMixedCase(class:String):Bool
 	 *
 	 * @since   12.3
 	 */
@@ -389,6 +397,7 @@ abstract class JLoader
 	 * @param   boolean  $force  True to overwrite the autoload path value for the class if it already exists.
 	 *
 	 * @return  void
+	 * @proto static public register(class:String, path:String, force:Bool):Void
 	 *
 	 * @since   11.1
 	 */
@@ -420,6 +429,7 @@ abstract class JLoader
 	 * @param   boolean  $reset   True to reset the prefix with only the given lookup path.
 	 *
 	 * @return  void
+	 * @proto static public registerPrefix(prefix:String, path:String, reset:Bool):Void
 	 *
 	 * @throws  RuntimeException
 	 *
@@ -453,6 +463,7 @@ abstract class JLoader
 	 * @param   boolean  $reset      True to reset the namespace with only the given lookup path.
 	 *
 	 * @return  void
+	 * @proto static public registerNamespace(namespace:String, path:String, reset:Bool):Void
 	 *
 	 * @throws  RuntimeException
 	 *
@@ -497,6 +508,7 @@ abstract class JLoader
 	 * @param   boolean  $enableClasses     True to enable class map based class loading (needed to auto load the Joomla core).
 	 *
 	 * @return  void
+	 * @proto static public setup(caseStrategy:Int, enableNamespaces:Bool, enablePrefixes:Bool, enableClasses:Bool):Void
 	 *
 	 * @since   12.3
 	 */
