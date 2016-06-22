@@ -114,6 +114,7 @@ class JRouter
 	 * @param   array   $options  An associative array of options
 	 *
 	 * @return  JRouter A JRouter object.
+	 * @proto static public getInstance(client:String, options:php.NativeArray):JRouter
 	 *
 	 * @since   11.1
 	 * @throws  RuntimeException
@@ -162,6 +163,7 @@ class JRouter
 	 * @param   JURI  $uri  The uri.
 	 *
 	 * @return  array
+	 * @proto public parse(uri:JURI):php.NativeArray
 	 *
 	 * @since   11.1
 	 */
@@ -193,6 +195,7 @@ class JRouter
 	 * @param   string  $url  The internal URL
 	 *
 	 * @return  string  The absolute search engine friendly URL
+	 * @proto public build(url:String):String
 	 *
 	 * @since   11.1
 	 */
@@ -223,7 +226,8 @@ class JRouter
 	 * Get the router mode
 	 *
 	 * @return  integer
-	 *
+	 * @proto public getMode():Int
+	 * 
 	 * @since   11.1
 	 */
 	public function getMode()
@@ -237,6 +241,7 @@ class JRouter
 	 * @param   integer  $mode  The routing mode.
 	 *
 	 * @return  void
+	 * @proto public setMode(mode:Int):Void
 	 *
 	 * @since   11.1
 	 */
@@ -253,6 +258,7 @@ class JRouter
 	 * @param   boolean  $create  If True, the variable will be created if it doesn't exist yet
 	 *
 	 * @return  void
+	 * @proto public setVar(key:String, value:Dynamic, create:Bool):Void
 	 *
 	 * @since   11.1
 	 */
@@ -271,6 +277,7 @@ class JRouter
 	 * @param   boolean  $merge  If True, the array will be merged instead of overwritten
 	 *
 	 * @return  void
+	 * @proto public setVars(vars:php.NativeArray, merge:Bool):Void
 	 *
 	 * @since   11.1
 	 */
@@ -292,6 +299,7 @@ class JRouter
 	 * @param   string  $key  The name of the variable
 	 *
 	 * @return  mixed  Value of the variable
+	 * @proto public getVar(key:String):Dynamic
 	 *
 	 * @since   11.1
 	 */
@@ -310,7 +318,8 @@ class JRouter
 	 * Get the router variable array
 	 *
 	 * @return  array  An associative array of router variables
-	 *
+	 * @proto public getVars():php.NativeArray
+	 * 
 	 * @since   11.1
 	 */
 	public function getVars()
@@ -324,6 +333,7 @@ class JRouter
 	 * @param   callback  $callback  The function to be called
 	 *
 	 * @return  void
+	 * @proto public attachBuildRule(callback:Dynamic):Void
 	 *
 	 * @since   11.1.
 	 */
@@ -338,6 +348,7 @@ class JRouter
 	 * @param   callback  $callback  The function to be called.
 	 *
 	 * @return  void
+	 * @proto public attachParseRule(callback:Dynamic):Void
 	 *
 	 * @since   11.1
 	 */
