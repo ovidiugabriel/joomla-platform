@@ -33,6 +33,7 @@ class JAccessRules
 	 * or an equivalent JSON encoded string, or an object where properties are arrays.
 	 *
 	 * @param   mixed  $input  A JSON format string (probably from the database) or a nested array.
+	 * @proto public new(input:Dynamic)
 	 *
 	 * @since   11.1
 	 */
@@ -62,6 +63,7 @@ class JAccessRules
 	 * Get the data for the action.
 	 *
 	 * @return  array  A named array of JAccessRule objects.
+	 * @proto public  getData():php.NativeArray
 	 *
 	 * @since   11.1
 	 */
@@ -76,6 +78,7 @@ class JAccessRules
 	 * @param   mixed  $input  JAccessRule or array of JAccessRules
 	 *
 	 * @return  void
+	 * @proto public mergeCollection(input:Dynamic):Void
 	 *
 	 * @since   11.1
 	 */
@@ -97,6 +100,7 @@ class JAccessRules
 	 * @param   mixed  $actions  JAccessRule object, an array of actions or a JSON string array of actions.
 	 *
 	 * @return  void
+	 * @proto public merge(actions:Dynamic):Void
 	 *
 	 * @since   11.1
 	 */
@@ -132,6 +136,7 @@ class JAccessRules
 	 * @param   array   $identities  An array of identities
 	 *
 	 * @return  void
+	 * @proto public mergeAction(action:String, identities:php.NativeArray):Void
 	 *
 	 * @since   11.1
 	 */
@@ -159,6 +164,7 @@ class JAccessRules
 	 * @param   mixed   $identity  An integer representing the identity, or an array of identities
 	 *
 	 * @return  mixed   Object or null if there is no information about the action.
+	 * @proto public allow(action:String, identity:Dynamic):Dynamic
 	 *
 	 * @since   11.1
 	 */
@@ -179,6 +185,7 @@ class JAccessRules
 	 * @param   mixed  $identity  An integer representing the identity or an array of identities
 	 *
 	 * @return  JObject  Allowed actions for the identity or identities
+	 * @proto public getAllowed(identity:Dynamic):JObject
 	 *
 	 * @since   11.1
 	 */
