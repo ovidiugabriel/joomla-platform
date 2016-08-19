@@ -102,6 +102,7 @@ class KeychainManager extends JApplicationCli
 	 * Load the keychain from a file.
 	 *
 	 * @return  void
+	 * @proto protected loadKeychain():Void
 	 *
 	 * @since   12.3
 	 */
@@ -131,6 +132,7 @@ class KeychainManager extends JApplicationCli
 	 * Save this keychain to a file.
 	 *
 	 * @return  void
+	 * @proto protected saveKeychain() 
 	 *
 	 * @since   12.3
 	 */
@@ -153,6 +155,7 @@ class KeychainManager extends JApplicationCli
 	 * Initialise a new passphrase file.
 	 *
 	 * @return  void
+	 * @proto protected initPassphraseFile()
 	 *
 	 * @since   12.3
 	 */
@@ -188,6 +191,7 @@ class KeychainManager extends JApplicationCli
 	 * Create a new entry
 	 *
 	 * @return  void
+	 * @proto protected create():Void
 	 *
 	 * @since   12.3
 	 */
@@ -211,6 +215,7 @@ class KeychainManager extends JApplicationCli
 	 * Change an existing entry to a new value or create an entry if missing.
 	 *
 	 * @return  void
+	 * @proto protected change():Void
 	 *
 	 * @since   12.3
 	 */
@@ -229,6 +234,7 @@ class KeychainManager extends JApplicationCli
 	 * Read an entry from the keychain
 	 *
 	 * @return  void
+	 * @proto protected read():Void
 	 *
 	 * @since   12.3
 	 */
@@ -267,6 +273,7 @@ class KeychainManager extends JApplicationCli
 	 * Delete an entry from the keychain
 	 *
 	 * @return  void
+	 * @proto protected delete():Void
 	 *
 	 * @since   12.3
 	 */
@@ -286,6 +293,7 @@ class KeychainManager extends JApplicationCli
 	 * List entries in the keychain
 	 *
 	 * @return  void
+	 * @param protected listEntries():Void
 	 *
 	 * @since   12.3
 	 */
@@ -307,20 +315,21 @@ class KeychainManager extends JApplicationCli
 	 * Display the help information
 	 *
 	 * @return  void
+	 * @proto protected displayHelp():Void
 	 *
 	 * @since   12.3
 	 */
 	protected function displayHelp()
 	{
-/*
-COMMANDS
-
- - list
- - create entry_name entry_value
- - change entry_name entry_value
- - delete entry_name
- - read   entry_name
-*/
+		/*
+		COMMANDS
+		
+		 - list
+		 - create entry_name entry_value
+		 - change entry_name entry_value
+		 - delete entry_name
+		 - read   entry_name
+		*/
 
 		$help = <<<HELP
 Keychain Management Utility
