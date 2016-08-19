@@ -87,6 +87,7 @@ abstract class JFactory
 	 * @param   string  $prefix  Application prefix
 	 *
 	 * @return  JApplicationBase object
+	 * @proto static public  getApplication(id:Dynamic, ?config:php.NativeArray, ?prefix:String):JApplicationBase
 	 *
 	 * @see     JApplicationBase
 	 * @since   11.1
@@ -137,6 +138,7 @@ abstract class JFactory
 	 * @param   string  $namespace  The namespace of the configuration file
 	 *
 	 * @return  JRegistry
+	 * @proto static public getConfig(?file:String, ?type:String, ?namespace:String):JRegistry
 	 *
 	 * @see     JRegistry
 	 * @since   11.1
@@ -164,6 +166,7 @@ abstract class JFactory
 	 * @param   array  $options  An array containing session options
 	 *
 	 * @return  JSession object
+	 * @proto static public getSession(?$options:php.NativeArray):JSession
 	 *
 	 * @see     JSession
 	 * @since   11.1
@@ -184,6 +187,7 @@ abstract class JFactory
 	 * Returns the global {@link JLanguage} object, only creating it if it doesn't already exist.
 	 *
 	 * @return  JLanguage object
+	 * @proto static public getLanguage():JLanguage
 	 *
 	 * @see     JLanguage
 	 * @since   11.1
@@ -204,6 +208,7 @@ abstract class JFactory
 	 * Returns the global {@link JDocument} object, only creating it if it doesn't already exist.
 	 *
 	 * @return  JDocument object
+	 * @proto static public  getDocument():JDocument
 	 *
 	 * @see     JDocument
 	 * @since   11.1
@@ -226,6 +231,7 @@ abstract class JFactory
 	 * @param   integer  $id  The user to load - Can be an integer or string - If string, it is converted to ID automatically.
 	 *
 	 * @return  JUser object
+	 * @proto static public getUser(?id:Int):JUser
 	 *
 	 * @see     JUser
 	 * @since   11.1
@@ -259,6 +265,7 @@ abstract class JFactory
 	 * @param   string  $storage  The storage method
 	 *
 	 * @return  JCacheController object
+	 * @proto static public getCache(?group:String, ?handler:String, ?storage:String):JCacheController
 	 *
 	 * @see     JCache
 	 */
@@ -293,6 +300,7 @@ abstract class JFactory
 	 * if it doesn't already exist.
 	 *
 	 * @return  JAccess object
+	 * @proto static public getACL():JAccess
 	 *
 	 * @deprecated  13.3  Use JAccess directly.
 	 */
@@ -314,6 +322,7 @@ abstract class JFactory
 	 * Returns the global {@link JDatabaseDriver} object, only creating it if it doesn't already exist.
 	 *
 	 * @return  JDatabaseDriver
+	 * @proto static public getDbo():JDatabaseDriver
 	 *
 	 * @see     JDatabaseDriver
 	 * @since   11.1
@@ -339,6 +348,7 @@ abstract class JFactory
 	 * Returns the global {@link JMail} object, only creating it if it doesn't already exist.
 	 *
 	 * @return  JMail object
+	 * @proto static public getMailer():JMail
 	 *
 	 * @see     JMail
 	 * @since   11.1
@@ -361,6 +371,7 @@ abstract class JFactory
 	 * @param   boolean  $isFile  true to load a file or false to load a string.
 	 *
 	 * @return  mixed    JXMLElement or SimpleXMLElement on success or false on error.
+	 * @param static public  getXML(data:String, ?isFile:Bool):Dynamic
 	 *
 	 * @see     JXMLElement
 	 * @since   11.1
@@ -416,6 +427,7 @@ abstract class JFactory
 	 * @param   string  $uri  Uri name.
 	 *
 	 * @return  JURI object
+	 * @proto static public getURI(?uri:String):JURI
 	 *
 	 * @see     JURI
 	 * @since   11.1
@@ -435,6 +447,7 @@ abstract class JFactory
 	 * @param   mixed  $tzOffset  The timezone offset.
 	 *
 	 * @return  JDate object
+	 * @proto static public getDate(?time:Dynamic, ?tzOffset:Dynamic):JDate
 	 *
 	 * @see     JDate
 	 * @since   11.1
@@ -489,6 +502,7 @@ abstract class JFactory
 	 * @param   string  $namespace  The namespace of the configuration file.
 	 *
 	 * @return  JRegistry
+	 * @proto static protected createConfig(file:String, ?type:String, ?namespace:String):JRegistry
 	 *
 	 * @see     JRegistry
 	 * @since   11.1
@@ -528,6 +542,7 @@ abstract class JFactory
 	 * @param   array  $options  An array containing session options
 	 *
 	 * @return  JSession object
+	 * @proto static protected createSession(?options:php.NativeArray):JSession
 	 *
 	 * @since   11.1
 	 */
@@ -554,6 +569,7 @@ abstract class JFactory
 	 * Create an database object
 	 *
 	 * @return  JDatabaseDriver
+	 * @proto static protected createDbo():JDatabaseDriver
 	 *
 	 * @see     JDatabaseDriver
 	 * @since   11.1
@@ -594,6 +610,7 @@ abstract class JFactory
 	 * Create a mailer object
 	 *
 	 * @return  JMail object
+	 * @proto static protected  createMailer():JMail
 	 *
 	 * @see     JMail
 	 * @since   11.1
@@ -641,6 +658,7 @@ abstract class JFactory
 	 * Create a language object
 	 *
 	 * @return  JLanguage object
+	 * @proto static protected createLanguage():JLanguage
 	 *
 	 * @see     JLanguage
 	 * @since   11.1
@@ -659,6 +677,7 @@ abstract class JFactory
 	 * Create a document object
 	 *
 	 * @return  JDocument object
+	 * @proto static protected createDocument():JDocument
 	 *
 	 * @see     JDocument
 	 * @since   11.1
@@ -685,6 +704,7 @@ abstract class JFactory
 	 * @param   boolean  $uamask       User agent masking (prefix Mozilla)
 	 *
 	 * @return  JStream
+	 * @proto static public getStream(?usePrefix:Bool, ?useNetwork:Bool, ?ua:String, ?uamask:Bool):JStream
 	 *
 	 * @see JStream
 	 * @since   11.1
