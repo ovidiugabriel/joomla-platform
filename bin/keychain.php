@@ -37,6 +37,7 @@ class KeychainManager extends JApplicationCli
 	 * Execute the application
 	 *
 	 * @return  void
+	 * @proto public execute():Void
 	 *
 	 * @since   12.3
 	 */
