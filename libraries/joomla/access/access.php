@@ -64,6 +64,7 @@ class JAccess
 	 * Method for clearing static caches.
 	 *
 	 * @return  void
+	 * @proto static public clearStatics():Void
 	 *
 	 * @since   11.3
 	 */
@@ -84,6 +85,7 @@ class JAccess
 	 * @param   mixed    $asset   Integer asset id or the name of the asset as a string.  Defaults to the global asset node.
 	 *
 	 * @return  boolean  True if authorised.
+	 * @proto static public check(userId:Int, action:String, ?asset:Dynamic):Bool
 	 *
 	 * @since   11.1
 	 */
@@ -125,6 +127,7 @@ class JAccess
 	 * @param   mixed    $asset    Integer asset id or the name of the asset as a string.  Defaults to the global asset node.
 	 *
 	 * @return  boolean  True if authorised.
+	 * @proto static public checkGroup(groupId:Int, action:String, ?asset:Dynamic):Bool
 	 *
 	 * @since   11.1
 	 */
@@ -162,6 +165,7 @@ class JAccess
 	 * @param   mixed  $groupId  An integer or array of integers representing the identities to check.
 	 *
 	 * @return  mixed  True if allowed, false for an explicit deny, null for an implicit deny.
+	 * @proto static protected getGroupPath(groupId:Dynamic):Dynamic
 	 *
 	 * @since   11.1
 	 */
@@ -211,6 +215,7 @@ class JAccess
 	 * @param   boolean  $recursive  True to return the rules object with inherited rules.
 	 *
 	 * @return  JAccessRules   JAccessRules object for the asset.
+	 * @proto static public  getAssetRules(asset:Dynamic, ?recursive:Bool):JAccessRules
 	 *
 	 * @since   11.1
 	 */
@@ -278,6 +283,7 @@ class JAccess
 	 * @param   boolean  $recursive  True to include inherited user groups.
 	 *
 	 * @return  array    List of user group ids to which the user is mapped.
+	 * @proto static public getGroupsByUser(userId:Int, ?recursive:Bool):php.NativeArray
 	 *
 	 * @since   11.1
 	 */
@@ -360,6 +366,7 @@ class JAccess
 	 * @param   boolean  $recursive  Recursively include all child groups (optional)
 	 *
 	 * @return  array
+	 * @proto static public getUsersByGroup(groupId:Int, ?recursive:Bool):php.NativeArray
 	 *
 	 * @since   11.1
 	 * @todo    This method should move somewhere else
@@ -395,6 +402,7 @@ class JAccess
 	 * @param   integer  $userId  Id of the user for which to get the list of authorised view levels.
 	 *
 	 * @return  array    List of view levels for which the user is authorised.
+	 * @proto static public  getAuthorisedViewLevels(userId:Int):php.NativeArray
 	 *
 	 * @since   11.1
 	 */
@@ -456,6 +464,7 @@ class JAccess
 	 * @param   string  $xpath  An optional xpath to search for the fields.
 	 *
 	 * @return  boolean|array   False if case of error or the list of actions available.
+	 * @proto static public  getActionsFromFile(file:String, ?xpath:String ):Dynamic
 	 *
 	 * @since   12.1
 	 */
@@ -482,6 +491,7 @@ class JAccess
 	 * @param   string                   $xpath  An optional xpath to search for the fields.
 	 *
 	 * @return  boolean|array   False if case of error or the list of actions available.
+	 * @proto static public getActionsFromData(data:Dynamic, ?xpath:String):Dynamic
 	 *
 	 * @since   12.1
 	 */
