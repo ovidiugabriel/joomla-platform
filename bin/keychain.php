@@ -382,12 +382,11 @@ HELP;
 	}
 }
 
-try
-{
-	JApplicationCli::getInstance('KeychainManager')->execute();
-}
-catch (Exception $e)
-{
-	echo $e->getMessage() . "\n";
+function main() {
+    try {
+        JApplicationCli::getInstance('KeychainManager')->execute();
+    } catch (Exception $e) {
+        echo $e->getMessage() . "\n";
 	exit(1);
+    }
 }
