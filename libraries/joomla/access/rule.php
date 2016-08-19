@@ -33,6 +33,7 @@ class JAccessRule
 	 * or an equivalent JSON encoded string.
 	 *
 	 * @param   mixed  $identities  A JSON format string (probably from the database) or a named array.
+	 * @proto public new(identities:Dynamic)
 	 *
 	 * @since   11.1
 	 */
@@ -51,6 +52,7 @@ class JAccessRule
 	 * Get the data for the action.
 	 *
 	 * @return  array  A named array
+	 * @proto public getData():php.NativeArray
 	 *
 	 * @since   11.1
 	 */
@@ -65,6 +67,7 @@ class JAccessRule
 	 * @param   mixed  $identities  An integer or array of integers representing the identities to check.
 	 *
 	 * @return  void
+	 * @proto public mergeIdentities(identities:php.NativeArray):Void
 	 *
 	 * @since   11.1
 	 */
@@ -91,6 +94,7 @@ class JAccessRule
 	 * @param   boolean  $allow     The value for the identity (true == allow, false == deny).
 	 *
 	 * @return  void
+	 * @proto public mergeIdentity(identity:Int, allow:Bool):Void
 	 *
 	 * @since   11.1
 	 */
@@ -123,6 +127,7 @@ class JAccessRule
 	 * @param   mixed  $identities  An integer or array of integers representing the identities to check.
 	 *
 	 * @return  mixed  True if allowed, false for an explicit deny, null for an implicit deny.
+	 * @proto public allow(identities:Dynamic):Dynamic
 	 *
 	 * @since   11.1
 	 */
