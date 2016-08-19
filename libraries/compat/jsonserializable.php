@@ -22,6 +22,7 @@ interface JsonSerializable
 	 * Return data which should be serialized by json_encode().
 	 *
 	 * @return  mixed
+	 * @proto public jsonSerialize():Dynamic
 	 *
 	 * @since   12.2
 	 */
