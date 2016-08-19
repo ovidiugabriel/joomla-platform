@@ -91,6 +91,8 @@ class JApplicationWeb extends JApplicationBase
 	 *                          client object.  If the argument is a JApplicationWebClient object that object will become
 	 *                          the application's client object, otherwise a default client object is created.
 	 *
+	 * @proto public new(?input:JInput, ?config:JRegistry, ?client:JApplicationWebClient)
+	 * 
 	 * @since   11.3
 	 */
 	public function __construct(JInput $input = null, JRegistry $config = null, JApplicationWebClient $client = null)
@@ -153,6 +155,7 @@ class JApplicationWeb extends JApplicationBase
 	 * @param   string  $name  The name (optional) of the JApplicationWeb class to instantiate.
 	 *
 	 * @return  JApplicationWeb
+	 * @proto static public getInstance(?name:String):JApplicationWeb
 	 *
 	 * @since   11.3
 	 */
@@ -198,6 +201,7 @@ class JApplicationWeb extends JApplicationBase
 	 *                              will be created based on the application's loadDispatcher() method.
 	 *
 	 * @return  JApplicationWeb  Instance of $this to allow chaining.
+	 * @proto public initialise(?session:Dynamic, ?document:Dynamic, ?language:Dynamic, ?dispatcher:Dynamic):JApplicationWeb
 	 *
 	 * @deprecated  13.1
 	 * @see     loadSession()
@@ -235,6 +239,7 @@ class JApplicationWeb extends JApplicationBase
 	 * Execute the application.
 	 *
 	 * @return  void
+	 * @proto public execute():Void
 	 *
 	 * @since   11.3
 	 */
@@ -284,6 +289,7 @@ class JApplicationWeb extends JApplicationBase
 	 * can be rendered to the client.
 	 *
 	 * @return  void
+	 * @proto protected doExecute():Void
 	 *
 	 * @codeCoverageIgnore
 	 * @since   11.3
@@ -299,6 +305,7 @@ class JApplicationWeb extends JApplicationBase
 	 * the application response buffer.
 	 *
 	 * @return  void
+	 * @proto protected render():Void
 	 *
 	 * @since   11.3
 	 */
@@ -336,6 +343,7 @@ class JApplicationWeb extends JApplicationBase
 	 * sending it to the client if possible.
 	 *
 	 * @return  void
+	 * @proto protected compress():Void
 	 *
 	 * @since   11.3
 	 */
@@ -406,6 +414,7 @@ class JApplicationWeb extends JApplicationBase
 	 * application output data.
 	 *
 	 * @return  void
+	 * @proto protected respond():Void
 	 *
 	 * @since   11.3
 	 */
@@ -455,6 +464,7 @@ class JApplicationWeb extends JApplicationBase
 	 * @param   boolean  $moved  True if the page is 301 Permanently Moved, otherwise 303 See Other is assumed.
 	 *
 	 * @return  void
+	 * @proto public redirect(url:String, ?moved:Bool):Void
 	 *
 	 * @since   11.3
 	 */
@@ -537,6 +547,7 @@ class JApplicationWeb extends JApplicationBase
 	 * @param   mixed  $data  Either an array or object to be loaded into the configuration object.
 	 *
 	 * @return  JApplicationWeb  Instance of $this to allow chaining.
+	 * @proto public loadConfiguration(data:Dynamic):JApplicationWeb
 	 *
 	 * @since   11.3
 	 */
@@ -562,6 +573,7 @@ class JApplicationWeb extends JApplicationBase
 	 * @param   mixed   $default  The default value (optional) if none is set.
 	 *
 	 * @return  mixed   The value of the configuration.
+	 * @proto public get(key:String, ?default):Dynamic
 	 *
 	 * @since   11.3
 	 */
@@ -577,6 +589,7 @@ class JApplicationWeb extends JApplicationBase
 	 * @param   mixed   $value  The value of the property to set (optional).
 	 *
 	 * @return  mixed   Previous value of the property
+	 * @proto public set(key:String, ?value:Dynamic):Dynamic
 	 *
 	 * @since   11.3
 	 */
@@ -595,6 +608,7 @@ class JApplicationWeb extends JApplicationBase
 	 * @param   boolean  $allow  True to allow browser caching.
 	 *
 	 * @return  boolean
+	 * @proto public allowCache(?allow:Bool):Bool
 	 *
 	 * @since   11.3
 	 */
@@ -618,6 +632,7 @@ class JApplicationWeb extends JApplicationBase
 	 * @param   boolean  $replace  True to replace any headers with the same name.
 	 *
 	 * @return  JApplicationWeb  Instance of $this to allow chaining.
+	 * @proto public setHeader(name:String, value:String, ?replace:Bool):JApplicationWeb
 	 *
 	 * @since   11.3
 	 */
@@ -653,6 +668,7 @@ class JApplicationWeb extends JApplicationBase
 	 * to the client.
 	 *
 	 * @return  array
+	 * @proto public getHeaders():php.NativeArray
 	 *
 	 * @since   11.3
 	 */
@@ -665,6 +681,7 @@ class JApplicationWeb extends JApplicationBase
 	 * Method to clear any set response headers.
 	 *
 	 * @return  JApplicationWeb  Instance of $this to allow chaining.
+	 * @proto public clearHeaders():JApplicationWeb
 	 *
 	 * @since   11.3
 	 */
@@ -679,6 +696,7 @@ class JApplicationWeb extends JApplicationBase
 	 * Send the response headers.
 	 *
 	 * @return  JApplicationWeb  Instance of $this to allow chaining.
+	 * @proto public  sendHeaders():JApplicationWeb
 	 *
 	 * @since   11.3
 	 */
@@ -709,6 +727,7 @@ class JApplicationWeb extends JApplicationBase
 	 * @param   string  $content  The content to set as the response body.
 	 *
 	 * @return  JApplicationWeb  Instance of $this to allow chaining.
+	 * @proto public setBody(content:String):JApplicationWeb
 	 *
 	 * @since   11.3
 	 */
@@ -725,6 +744,7 @@ class JApplicationWeb extends JApplicationBase
 	 * @param   string  $content  The content to prepend to the response body.
 	 *
 	 * @return  JApplicationWeb  Instance of $this to allow chaining.
+	 * @proto public prependBody(content:String):JApplicationWeb
 	 *
 	 * @since   11.3
 	 */
@@ -741,6 +761,7 @@ class JApplicationWeb extends JApplicationBase
 	 * @param   string  $content  The content to append to the response body.
 	 *
 	 * @return  JApplicationWeb  Instance of $this to allow chaining.
+	 * @proto public appendBody(content:String):JApplicationWeb
 	 *
 	 * @since   11.3
 	 */
@@ -757,6 +778,7 @@ class JApplicationWeb extends JApplicationBase
 	 * @param   boolean  $asArray  True to return the body as an array of strings.
 	 *
 	 * @return  mixed  The response body either as an array or concatenated string.
+	 * @proto public getBody(?asArray:Bool):Dynamic
 	 *
 	 * @since   11.3
 	 */
@@ -769,6 +791,7 @@ class JApplicationWeb extends JApplicationBase
 	 * Method to get the application document object.
 	 *
 	 * @return  JDocument  The document object
+	 * @proto public getDocument():JDocument
 	 *
 	 * @since   11.3
 	 */
@@ -781,6 +804,7 @@ class JApplicationWeb extends JApplicationBase
 	 * Method to get the application language object.
 	 *
 	 * @return  JLanguage  The language object
+	 * @proto public  getLanguage():JLanguage
 	 *
 	 * @since   11.3
 	 */
@@ -793,6 +817,7 @@ class JApplicationWeb extends JApplicationBase
 	 * Method to get the application session object.
 	 *
 	 * @return  JSession  The session object
+	 * @proto public  getSession():JSession
 	 *
 	 * @since   11.3
 	 */
@@ -806,6 +831,7 @@ class JApplicationWeb extends JApplicationBase
 	 * wrapping this to isolate the connection_status() function from our code base for testing reasons.
 	 *
 	 * @return  boolean  True if the connection is valid and normal.
+	 * @proto protected checkConnectionAlive():Bool
 	 *
 	 * @codeCoverageIgnore
 	 * @see     connection_status()
@@ -821,6 +847,7 @@ class JApplicationWeb extends JApplicationBase
 	 * headers_sent() function from our code base for testing reasons.
 	 *
 	 * @return  boolean  True if the headers have already been sent.
+	 * @proto protected checkHeadersSent():Bool
 	 *
 	 * @codeCoverageIgnore
 	 * @see     headers_sent()
@@ -835,6 +862,7 @@ class JApplicationWeb extends JApplicationBase
 	 * Method to detect the requested URI from server environment variables.
 	 *
 	 * @return  string  The requested URI
+	 * @proto protected  detectRequestUri():String
 	 *
 	 * @since   11.3
 	 */
@@ -890,6 +918,7 @@ class JApplicationWeb extends JApplicationBase
 	 * @param   string  $class  The class name to instantiate.
 	 *
 	 * @return  mixed   Either an array or object to be loaded into the configuration object.
+	 * @proto protected fetchConfigurationData(?file:String, ?className:String):Dynamic
 	 *
 	 * @since   11.3
 	 */
@@ -938,6 +967,7 @@ class JApplicationWeb extends JApplicationBase
 	 *                             this parameter only has an effect if the string is not empty.
 	 *
 	 * @return  void
+	 * @proto protected header(string:String, ?replace:Bool, ?code:Int):Void
 	 *
 	 * @codeCoverageIgnore
 	 * @see     header()
@@ -952,6 +982,7 @@ class JApplicationWeb extends JApplicationBase
 	 * Determine if we are using a secure (SSL) connection.
 	 *
 	 * @return  boolean  True if using SSL, false if not.
+	 * @proto public isSSLConnection():Bool
 	 *
 	 * @since   12.2
 	 */
@@ -970,6 +1001,7 @@ class JApplicationWeb extends JApplicationBase
 	 * @param   JDocument  $document  An optional document object. If omitted, the factory document is created.
 	 *
 	 * @return  JApplicationWeb This method is chainable.
+	 * @proto public loadDocument(?document:JDocument):JApplicationWeb
 	 *
 	 * @since   11.3
 	 */
@@ -990,6 +1022,7 @@ class JApplicationWeb extends JApplicationBase
 	 * @param   JLanguage  $language  An optional language object. If omitted, the factory language is created.
 	 *
 	 * @return  JApplicationWeb This method is chainable.
+	 * @proto public loadLanguage(?language:JLanguage):JApplicationWeb
 	 *
 	 * @since   11.3
 	 */
@@ -1010,6 +1043,7 @@ class JApplicationWeb extends JApplicationBase
 	 * @param   JSession  $session  An optional session object. If omitted, the session is created.
 	 *
 	 * @return  JApplicationWeb This method is chainable.
+	 * @proto public loadSession(?session:JSession):JApplicationWeb
 	 *
 	 * @since   11.3
 	 */
@@ -1063,6 +1097,7 @@ class JApplicationWeb extends JApplicationBase
 	 * After the session has been started we need to populate it with some default values.
 	 *
 	 * @return  void
+	 * @proto afterSessionStart():Void
 	 *
 	 * @since   12.2
 	 */
@@ -1084,6 +1119,7 @@ class JApplicationWeb extends JApplicationBase
 	 *                               server environment variables.
 	 *
 	 * @return  void
+	 * @proto protected loadSystemUris(?requestUri:String):Void
 	 *
 	 * @since   11.3
 	 */
